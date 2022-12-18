@@ -1,0 +1,136 @@
+/* підключення шрифтів */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap");
+
+/* видима частина вікна браузера */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background: black;
+}
+
+/* основний контейнер */
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* частина з фоновим зображенням та позначкою на певному товарі */
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* друга частина позначки */
+svg a:hover .ring {
+  animation-name: beacon;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+/* анімація позначки */
+@keyframes beacon {
+  0% {
+    r: 22;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    r: 50;
+    opacity: 0;
+  }
+}
+
+/* частина, що з'являється при кліку на позначці */
+.overlay {
+  backdrop-filter: blur(45px);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* модальне вікно */
+.modal {
+  background: white;
+  box-shadow: 0px 0px 110px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  width: 60%;
+  padding: 75px 95px;
+  display: flex;
+  gap: 30px;
+  position: relative;
+  justify-content: center;
+}
+
+/* дві частини вмісту модального вікна */
+.product-image,
+.content {
+  flex: 1;
+}
+
+/* кнопка для закриття вікна */
+.close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* заголовок */
+h1 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: -0.5;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  line-height: 0.9;
+  color: #f41e82;
+}
+
+/* опис */
+.description {
+  margin-bottom: 50px;
+}
+
+/* абзац у описі */
+p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* посилання для переходу до купівлі товару */
+.buy-now {
+  background-color: #ffd200;
+  color: black;
+  border-radius: 100px;
+  font-weight: 900;
+  font-size: 1.25rem;
+  padding: 20px 50px;
+  text-decoration: none;
+}
+
+/* посилання для переходу до купівлі товару в стані ховеру  */
+.buy-now:hover {
+  background-color: #3452a5;
+  color: #ffd200;
+}
